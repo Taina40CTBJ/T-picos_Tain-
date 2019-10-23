@@ -87,3 +87,69 @@ class Pessoa{
     
   }
 }
+
+QUESTÃO 3 => 4 PONTOS
+
+void main() {
+  Conta ob= new Conta(66,100,44);
+  int MostraAgencia=ob.ContaDados(ob.Agencia1);
+  print("a minha agencia é $MostraAgencia");
+   int MostraConta=ob.ContaDados2(ob.Conta1);
+    print("a minha agencia é $MostraConta");
+  ob.SaldoConta();
+  ob.Deposito(1000);
+  ob.Transferencia(122222000000);
+  ob.Saque(200);
+ 
+
+  
+ 
+}
+
+class Conta{
+   int Agencia1;
+  double Saldo1;
+  int Conta1;
+  Conta(int A1, double S1, int C1){
+    this.Agencia1=A1;
+     this.Saldo1=S1;
+    this.Conta1=C1;
+  }
+  int ContaDados(int a)=>a;
+ int ContaDados2(int e){
+   return e;
+ }
+ void SaldoConta(){
+   print("saldo atual é ${this.Saldo1}");
+ }
+  
+  void Deposito(double d){
+    this.Saldo1=this.Saldo1+d;
+    SaldoConta();
+    
+  }
+  
+  void Transferencia( double b){
+    if(this.Saldo1<b){
+      print("saldo insuficiente para a transferencia");
+    }
+    else{
+    this.Saldo1=this.Saldo1-b;
+    SaldoConta();
+    }
+  }
+  
+  void Saque(double y){
+     if(this.Saldo1<y){
+      print("saldo insuficiente para o saque");
+    }
+    else{
+    this.Saldo1=this.Saldo1-y;
+    SaldoConta();
+    }
+     
+ }
+  
+  
+}
+
